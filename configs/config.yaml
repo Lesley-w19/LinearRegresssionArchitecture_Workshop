@@ -1,0 +1,29 @@
+
+connection: 'postgresql://neondb_owner:npg_mSe9jiRDJr4c@ep-lingering-credit-a8ulw127-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require'
+
+data:
+  train_path: data/train.csv
+  test_path: data/test.csv
+
+model:
+  learning_rate: 0.01
+  epochs: 100
+  batch_size: 32
+
+output:
+  checkpoint_dir: checkpoints/
+  log_dir: logs/
+  results_dir: results/
+
+random_seed: 42
+
+features:
+  selected: ["feature1", "feature2", "feature3"]
+  target: "target_variable"
+
+
+metrics:
+  - mse
+  - mae
+
+connection_string:
